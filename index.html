@@ -10,46 +10,49 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    
+  <div class="battlePage invisibleP">
+
+  </div>
 
   <div class="contentContainer">
   <div class="row" style="height:100%; background-color: aquamarine;">
     <div class="col-md-3 adjustmentTab" style="height:100%">
+    <div class="lable">name your creature</div>
     <input class="nameInput" type="text" alt="nameinput">
-    <input type="range" class="eyes" name="teeth" min="0" max="6">
-    <input type="range" class="teeth invisibleP" name="teeth" min="0" max="10">
     
-    <div class="lable">Outer Color</div>
-    <div class="lable">Inner Color</div>
+    
+    <div class="lable">outer red</div>
     <input type="range" class="outerRed" name="outerRed" min="0" max="250">
-    <div class="lable">Inner Color</div>
+    <div class="lable">outer green</div>
     <input type="range" class="outerGreen" name="outerGreen" min="0" max="250">
-    <div class="lable">Inner Color</div>
+    <div class="lable">outer blue</div>
     <input type="range" class="outerBlue" name="outerBlue" min="0" max="250">
-    <div class="lable">Inner Color</div>
-    <div class="lable">Inner Color</div>
+    
+    <div class="lable">Inner red</div>
     <input type="range" class="innerRed" name="innerRed" min="0" max="250">
-    <div class="lable">Inner Color</div>
+    <div class="lable">Inner green</div>
     <input type="range" class="innerGreen" name="innerGreen" min="0" max="250">
-    <div class="lable">Inner Color</div>
+    <div class="lable">Inner blue</div>
     <input type="range" class="innerBlue" name="innerBlue" min="0" max="250">
     <div class="lable">Top Roundness</div>
-    <input type="range" class="topRoundness" name="topRoundness" min="0" max="100">
+    <input type="range" class="topRoundness" name="topRoundness" min="0" max="50">
     <div class="lable">Bottom Roundness</div>
-    <input type="range" class="bottomRoundness" name="bottomRoundness" min="0" max="100">
+    <input type="range" class="bottomRoundness" name="bottomRoundness" min="0" max="50">
     <div class="lable">Height</div>
     <input type="range" class="height" name="height" min="20" max="100">
     <div class="lable">width</div>
     <input type="range" class="width" name="width" min="20" max="100">
+    <div class="lable">mouth width</div>
+    <input type="range" class="mouthWidth" name="width" min="0" max="80">
 
 
-    <select class="selectMouth" name="choice">
-      <option value="mouth">Destroyer Has Mouth</option>
-      <option value="noMouth" selected>Destroyer Has No Mouth</option>
-    </select>
-    <select class="select Tentacles" name="choice">
-      <option value="first">First Value</option>
-      <option value="second" selected>Second Value</option>
-    </select>
+   
+    <div class="lable">eye height</div>
+    <input type="range" class="eyeHeight" name="width" min="20" max="50">
+    <div class="lable">how many eyes</div>
+    <input type="range" class="eyeNumber" name="width" min="0" max="8">
+  
 
 
     
@@ -57,7 +60,12 @@
 
     <div class="col-md-9 displaySection" style="height:100%">
 
-      <div class ></div>
+      <div class="monsterNameDisplay">
+
+
+      </div>
+
+      <div class="monsterDisplay">
 
       <div class="monsterBody">
         <div class="monsterEyerow">
@@ -243,13 +251,15 @@
       
       </div>
     </div>
-</div>
-
-  
-  <div class="battlePage invisibleP">
-
   </div>
 </div>
+
+
+</div>
+
+<div class="attackButton">ATTACK</div>
+<div class="createButton">Create Creature</div>
+
 
 
 
