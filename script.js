@@ -91,7 +91,7 @@ if(trottle=="on"){
     let innerRed = parseInt($('.innerRed').val());
     let innerGreen =parseInt( $('.innerGreen').val());
     let innerBlue = parseInt($('.innerBlue').val());
-    $('.monsterBody, .tentacleRoot, .tentaclePart, .tentacleRoot2').css( 'background-image','radial-gradient(rgb('+outerRed+','+ outerGreen +','+ outerBlue+')30% , rgb('+innerRed+','+ innerGreen +','+ innerBlue+')'); 
+    $('.monsterBody, .tentacleRoot, .tentaclePart, .tentacleRoot2').css( 'background-image','radial-gradient(rgb('+innerRed+','+ innerGreen +','+ innerBlue+')30% , rgb('+outerRed+','+ outerGreen +','+ outerBlue+')'); 
        
         trottle='off';
         setTimeout(() => {

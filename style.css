@@ -345,7 +345,7 @@ input[type=range].innerRed,.outerRed {
   .globe{
     overflow: hidden;
     position:relative;
-    top:20%;
+    top:15%;
     margin:auto;
     height:400px;
     width:400px;
