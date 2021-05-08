@@ -1,3 +1,19 @@
+function addStars(){
+    for(i=0;i<145;i++){
+      var star = $("<div>");
+      star.addClass('star');
+      var XLen = Math.floor(Math.random()*100);
+      var YLen = Math.floor(Math.random()*70)
+      star.css('left',XLen+'%')
+      star.css('top',YLen+'%')
+      $(".battlePage").append(star);
+    }
+  
+  }
+  
+  var beaminterval;
+
+
 function wave(){
     var tentacleParts = $(".tentacleRoot .tentaclePart");
     for(let i=0;i<tentacleParts.length;i++){
@@ -9,6 +25,8 @@ function wave(){
     }
 
 }
+
+
 
 function wave2(){
     var tentacleParts = $(".tentacleRoot .tentaclePart");
@@ -188,12 +206,14 @@ $('.nameInput').change(e=>{
         if(trottle=="on"){
         let name=  $('.nameInput').val();
         if(name.length>0){
+        $('.attackButton').removeClass('invisibleP')
         $('.monsterNameDisplay').html('')
         var nameletters=name.split('');
         for(let i=0;i<nameletters.length;i++){
             setTimeout(() => {
                 var letter=$('<div class="nameLetter">'+nameletters[i]+'<div>');
                 $('.monsterNameDisplay').append(letter)
+                
 
 
                 
@@ -207,6 +227,7 @@ $('.nameInput').change(e=>{
             
         }, 500);
     }
+    else{$('.attackButton').addClass('invisibleP')}
 }
 })
 
@@ -289,11 +310,10 @@ function createBattleScene(){
         $('.battlePage').prepend(creatureContainer)
         setTimeout(() => {
             $('.gateParent').css('visibility','hidden')
-            setInterval(() => {
+           beaminterval= setInterval(() => {
                 firebeams();
                 
             }, 2000);
-            
         }, 500);
         
     }, 1500);
@@ -301,10 +321,22 @@ function createBattleScene(){
 }
 
 $('.attackButton').click(e=>{
+   
+    
     e.preventDefault();
     e.stopPropagation();
+  
     $('.battlePage').removeClass('invisibleP')
+    $('.contentContainer').addClass('invisibleP')
     createBattleScene()
+    addStars();
+    var title=$('<div>')
+    title.addClass('title');
+    var monsterName= $('.nameInput').val();
+    $('.battlePage').prepend(title)
+    $('.title').html('<p>The Attack of '+monsterName+'</p>')
+    $('.createButton').removeClass('invisibleP')
+    $('.attackButton').addClass('invisibleP')
 
 })
 
@@ -312,6 +344,10 @@ $('.createButton').click(e=>{
     e.preventDefault();
     e.stopPropagation();
     $('.battlePage').addClass('invisibleP')
+    $('.contentContainer').removeClass('invisibleP')
+    $('.beam').remove();
+    clearInterval(beaminterval);
+    $('.createButton').addClass('invisibleP')
 
 })
 
@@ -348,8 +384,6 @@ function firebeams(){
         beam.css('left',left+"%");
         $('.monsterBody').append(beam);
         explosion();
-
-
 
 }
 
