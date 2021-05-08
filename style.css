@@ -269,12 +269,12 @@ input[type=range].innerRed, .outerRed {
    z-index:3;
     top:20%;
     animation:monsterAppear .5s both;
-    transform-origin:cente
+    transform-origin:center;
     
   }
 
   @keyframes monsterAppear{
-    0%{transform:scale(.5)translateX(-50%)}
+    0%{transform:scale(.2)translateX(-20%)}
     100%{transform:scale(1)translateX(0%)}
 
   }
@@ -402,6 +402,39 @@ input[type=range].innerRed, .outerRed {
     height:100%;
     width:100%;
     background-color: black;
+  }
+
+  .beam{
+    position:absolute;
+    transform-origin:bottom;
+    width:2px;
+    animation:beam 2s both;
+    top:101%;
+  }
+
+  @keyframes beam {
+    0%{height:1%}
+    50%{height:300%;transform:scaleY(1)}
+    100%{transform:scaleY(0 )}
+  }
+
+  .explosion{
+    position:absolute;
+    background-color: rgb(255, 234, 148);
+    height:30px;
+    width:30px;
+    border-radius: 50%;
+    transform-origin:center;
+    animation: explode .5s both;
+    z-index:3 
+
+  }
+
+  @keyframes explode{
+    0%{transform:scale(.1);opacity: 100%;}
+    50%{transform:scale(.5);opacity: 50%;}
+    99%{transform:scale(1);opacity: 50%;}
+    100%{transform:scale(0);opacity: 50%;}
   }
 
   

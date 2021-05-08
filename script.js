@@ -289,6 +289,10 @@ function createBattleScene(){
         $('.battlePage').prepend(creatureContainer)
         setTimeout(() => {
             $('.gateParent').css('visibility','hidden')
+            setInterval(() => {
+                firebeams();
+                
+            }, 2000);
             
         }, 500);
         
@@ -310,5 +314,58 @@ $('.createButton').click(e=>{
     $('.battlePage').addClass('invisibleP')
 
 })
+
+function explosion(){
+
+    for(let i=0;i<9;i++){
+        setTimeout(() => {
+            let top = Math.random()*80+20
+        let left = Math.random()*80+20
+
+
+    var explosion = $('<div>');
+    explosion.addClass('explosion');
+    explosion.css('top',top+"%");
+    explosion.css('left',left+"%");
+    $('.globe').append(explosion)
+            
+        }, i*50);
+
+        
+
+    }
+
+}
+function firebeams(){
+    var beam=$('<div>')
+    beam.addClass('beam');
+
+        let left = Math.random()*80+10
+        let red = Math.random()*250;
+        let green = Math.random()*250;
+        let blue = Math.random()*250;
+        beam.css('background','rgb('+red+','+green+","+blue)
+        beam.css('left',left+"%");
+        $('.monsterBody').append(beam);
+        explosion();
+
+
+
+}
+
+// function eraseBeams(){
+//     setInterval(() => {
+//         var beams=$('.beams')
+//         for(let i=0;i<beams.length;i++){
+//             setTimeout(() => {
+//                 $(beams[i]).remove();
+
+                
+//             }, i*100);
+//         }
+        
+//     }, 500);
+// }
+
 
 
